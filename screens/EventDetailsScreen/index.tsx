@@ -1,6 +1,6 @@
 import * as React from "react";
 import { gql, useQuery } from "@apollo/client";
-import { Link, useRouter, useSearchParams } from "expo-router";
+import { useSearchParams } from "expo-router";
 import {
   Text,
   View,
@@ -39,7 +39,6 @@ const EventDetailsScreen: React.FC<EventDetailsScreenProps> = () => {
       id: eventId,
     },
   });
-  const router = useRouter();
 
   const [event, setEvent] = React.useState<IEvent>();
 
@@ -69,7 +68,7 @@ const EventDetailsScreen: React.FC<EventDetailsScreenProps> = () => {
           <Image source={{ uri: event.logoUrl }} style={styles.headerImage} />
           <View style={styles.titleContainer}>
             <Text style={styles.title}>{event.title}</Text>
-            <Button title="See on the web" onPress={openURL} />
+            <Button title="More Details" onPress={openURL} />
           </View>
           <RenderHtml
             contentWidth={Dimensions.get("window").width}

@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Distance Events",
+    "slug": "distance-events",
+    "version": "1.0.0",
+    "scheme": "distance-events",
+    "owner": "kescript",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.kescript.distanceevents"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "53181ac4-3765-4e8c-88a4-eb5ca89b81e6"
+      }
+    }
+  }
+}

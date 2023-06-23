@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { Text, View, FlatList } from "react-native";
 import { EventCard, Loading } from "../../components";
 import { gql, useQuery } from "@apollo/client";
 import styles from "./styles";
@@ -57,7 +57,6 @@ export default function EventsScreen() {
         )}
         keyExtractor={({ id }) => id}
         showsVerticalScrollIndicator={false}
-        // style={{ flex: 1 }}
       />
     </View>
   );
