@@ -10,7 +10,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: `Bearer `,
+      "X-api-key": "da2-frbj2qpdvjh6bptdholrtw7kqi",
     },
   };
 });
