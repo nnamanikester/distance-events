@@ -6,10 +6,12 @@ export default StyleSheet.create({
     backgroundColor: "#4f42ef",
     borderRadius: 10,
     padding: 5,
+    marginBottom: 20,
   },
   details: {
     paddingHorizontal: 10,
     justifyContent: "center",
+    width: "70%",
   },
   image: {
     width: 100,
@@ -30,6 +32,7 @@ export default StyleSheet.create({
     borderRadius: 5,
     marginVertical: 10,
     paddingVertical: 2,
+    maxWidth: 100,
   },
   categoryTitle: {
     color: "#ffffff",
