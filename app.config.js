@@ -1,12 +1,12 @@
 export default {
   expo: {
-    name: "distance-events",
+    name: "Distance Events",
     slug: "distance-events",
     version: "1.0.0",
     scheme: "distance-events",
     orientation: "portrait",
     icon: "./assets/icon.png",
-    userInterfaceStyle: "light",
+    userInterfaceStyle: "dark",
     splash: {
       image: "./assets/splash.png",
       resizeMode: "contain",
