@@ -1,16 +1,17 @@
 import * as React from "react";
-import { StatusBar } from "react-native";
 import { Stack } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ApolloProvider } from "@apollo/client";
+import { graphqlService } from "../services";
 
 const Layout: React.FC = () => {
   return (
-    <>
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#080520" }}>
+    <ApolloProvider client={graphqlService}>
+      <SafeAreaView style={{ flex: 1 }}>
         <Stack
           screenOptions={{
             contentStyle: {
-              backgroundColor: "#080520",
+              // backgroundColor: "#080520",
             },
             gestureDirection: "horizontal",
             gestureEnabled: true,
@@ -18,11 +19,14 @@ const Layout: React.FC = () => {
             customAnimationOnGesture: true,
             animation: "slide_from_right",
           }}
-        />
+        >
+          <Stack.Screen
+            name="details/[eventId]"
+            options={{ headerTitle: "", headerShown: true }}
+          />
+        </Stack>
       </SafeAreaView>
-
-      <StatusBar backgroundColor="#080520" barStyle="light-content" />
-    </>
+    </ApolloProvider>
   );
 };
 

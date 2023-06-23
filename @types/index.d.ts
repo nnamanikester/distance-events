@@ -9,3 +9,8 @@ interface IEvent {
   logoUrl: string;
   category: string;
 }
+
+interface IEventConnection {
+  items: IEvent[];
+  nextToken: string | null;
+}

@@ -4,29 +4,32 @@ import styles from "./styles";
 import dayjs from "dayjs";
 
 interface EventCardProps {
-  onClick?: () => void;
-  title: string;
-  imageUrl: string;
-  category: string;
-  date: string;
+  onClick?: (id: string) => void;
+  event: IEvent;
 }
 
-const EventCard: React.FC<EventCardProps> = (props) => {
+const EventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
+  const handleOnClick = () => {
+    onClick && onClick(event.id);
+  };
+
   return (
-    <Pressable>
+    <Pressable onPress={handleOnClick}>
       <View style={styles.container}>
-        <View>
-          <Image style={styles.image} source={{ uri: props.imageUrl }} />
-        </View>
+        {event.logoUrl && (
+          <View>
+            <Image style={styles.image} source={{ uri: event.logoUrl }} />
+          </View>
+        )}
         <View style={styles.details}>
           <Text numberOfLines={1} style={styles.title}>
-            {props.title}
+            {event.title}
           </Text>
           <View style={styles.category}>
-            <Text style={styles.categoryTitle}>{props.category}</Text>
+            <Text style={styles.categoryTitle}>{event.category}</Text>
           </View>
           <Text style={styles.date}>
-            {dayjs(props.date).format("DD MMM, YYYY")}
+            {dayjs(event.startDate).format("DD MMM, YYYY")}
           </Text>
         </View>
       </View>
