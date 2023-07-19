@@ -10,9 +10,6 @@ const Layout: React.FC = () => {
       <SafeAreaView style={{ flex: 1 }}>
         <Stack
           screenOptions={{
-            contentStyle: {
-              // backgroundColor: "#080520",
-            },
             gestureDirection: "horizontal",
             gestureEnabled: true,
             headerShown: false,

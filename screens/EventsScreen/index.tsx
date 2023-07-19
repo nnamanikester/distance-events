@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, FlatList } from "react-native";
+import { Text, View, FlatList, ListRenderItem } from "react-native";
 import { EventCard, Loading } from "../../components";
 import { gql, useQuery } from "@apollo/client";
 import styles from "./styles";
@@ -44,20 +44,26 @@ export default function EventsScreen() {
     router.push(`/details/${id}`);
   };
 
+  const renderEvent: ListRenderItem<IEvent> = ({ item }) => (
+    <EventCard onClick={openDetails} event={item} />
+  );
+
   if (loading) return <Loading />;
 
   return (
     <View style={styles.layout}>
       <Text style={styles.title}>Events List</Text>
 
-      <FlatList
-        data={events}
-        renderItem={({ item }) => (
-          <EventCard onClick={openDetails} event={item} />
-        )}
-        keyExtractor={({ id }) => id}
-        showsVerticalScrollIndicator={false}
-      />
+      {!events.length ? (
+        <Text>No events to display.</Text>
+      ) : (
+        <FlatList
+          data={events}
+          renderItem={renderEvent}
+          keyExtractor={({ id }) => id}
+          showsVerticalScrollIndicator={false}
+        />
+      )}
     </View>
   );
 }

@@ -52,11 +52,11 @@ const EventDetailsScreen: React.FC<EventDetailsScreenProps> = () => {
     console.log(error);
   }
 
-  const openURL = async () => {
+  const openURL = () => {
     if (!event) return;
-    if (await Linking.canOpenURL(event?.url)) {
-      Linking.openURL(event.url);
-    }
+    // if (await Linking.canOpenURL(event?.url)) {
+    Linking.openURL(event.url);
+    // }
   };
 
   if (loading) return <Loading />;
